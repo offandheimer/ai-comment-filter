@@ -1,0 +1,27 @@
+{
+	"name": "background-changer",
+
+	"description": "change background color",
+	"version": "1.0",
+	"manifest_version": 3,
+	"action": {
+		"default_popup": "./public/index.html",
+		"default_title": "change background color"
+	},
+	"icons": {
+		"48": "logo192.png"
+	},
+	"content_scripts": [
+		{
+			"matches": ["*://www.youtube.com/*"],
+			"js": ["./build/static/js/content.js"]
+		}
+	],
+	"web_accessible_resources": [
+		{
+			"resources": ["static/js/*"],
+			"matches": ["<all_urls>"]
+		}
+	],
+	"permissions": ["activeTab"]
+}

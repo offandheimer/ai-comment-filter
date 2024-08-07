@@ -2,6 +2,7 @@ import * as path from "path"; // Ensure polyfill is configured if using 'path'
 import React from "react";
 import ReactDOM from "react-dom";
 import Background from "./components/Background";
+import Button from "./components/common/Button";
 
 // YouTube 페이지가 완전히 로드된 후 우리의 컴포넌트를 삽입합니다.
 window.addEventListener('load', () => {
@@ -14,9 +15,14 @@ window.addEventListener('load', () => {
     ReactDOM.render(
       <React.Fragment>
         <Background>
-            {
-                <div>Hi</div>
-            }
+            <Button text="Filter with AI ✨" 
+            onClick={() => console.log('Primary 클릭')} 
+            type="primary" 
+            />
+            <Button text="Liked Comment 🩷" 
+            onClick={() => console.log('Primary 클릭')} 
+            type="secondary" 
+            />
         </Background>
       </React.Fragment>,
       container

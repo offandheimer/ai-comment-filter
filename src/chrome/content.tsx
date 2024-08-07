@@ -1,12 +1,24 @@
 import * as path from "path"; // Ensure polyfill is configured if using 'path'
 import React from "react";
 import ReactDOM from "react-dom";
-import YoutubeButton from "./YoutubeButton";
+import Background from "./components/Background";
 
-// Create a container to mount the React component
-const container = document.createElement("div");
-container.id = "my-extension-root";
-document.body.appendChild(container);
-
-// Render the React component into the container
-ReactDOM.render(<YoutubeButton />, container);
+// YouTube 페이지가 완전히 로드된 후 우리의 컴포넌트를 삽입합니다.
+window.addEventListener('load', () => {
+    // 컨테이너 생성
+    const container = document.createElement("div");
+    container.id = "my-extension-root";
+    document.body.appendChild(container);
+  
+    // React 컴포넌트 렌더링
+    ReactDOM.render(
+      <React.Fragment>
+        <Background>
+            {
+                <div>Hi</div>
+            }
+        </Background>
+      </React.Fragment>,
+      container
+    );
+  });

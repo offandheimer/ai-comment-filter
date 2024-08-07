@@ -1,12 +1,12 @@
 {
-	"name": "background-changer",
+	"name": "ai comment filter",
 
-	"description": "change background color",
+	"description": "comment filter using llm",
 	"version": "1.0",
 	"manifest_version": 3,
 	"action": {
 		"default_popup": "./public/index.html",
-		"default_title": "change background color"
+		"default_title": "comment filter using llm"
 	},
 	"icons": {
 		"48": "logo192.png"
